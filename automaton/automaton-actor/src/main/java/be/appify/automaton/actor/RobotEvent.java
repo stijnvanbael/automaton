@@ -1,4 +1,4 @@
-package be.appify.automaton.actor;
+package main.java.be.appify.automaton.actor;
 
 import be.appify.automaton.api.Action;
 import be.appify.automaton.api.Device;

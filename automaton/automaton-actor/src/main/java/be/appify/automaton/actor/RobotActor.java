@@ -1,4 +1,4 @@
-package be.appify.automaton.actor;
+package main.java.be.appify.automaton.actor;
 
 import akka.actor.UntypedActor;
 import be.appify.automaton.api.Robot;
