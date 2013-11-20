@@ -1,9 +1,9 @@
 package be.appify.automaton.api;
 
-import java.util.List;
+import java.util.Collection;
 
 public interface Robot {
-    List<Device> devices();
+    Collection<Device> devices();
 
     Device device(String name);
 }
