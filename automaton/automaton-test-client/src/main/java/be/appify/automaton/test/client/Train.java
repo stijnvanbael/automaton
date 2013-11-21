@@ -1,22 +1,31 @@
 package be.appify.automaton.test.client;
 
-import be.appify.automaton.api.Action;
-import com.google.common.collect.ImmutableMap;
+import be.appify.automaton.api.AbstractRobot;
+import be.appify.automaton.api.Event;
 
-import java.util.Collections;
-
-public class Train extends TestRobot {
+public class Train extends AbstractRobot {
     public Train() {
-        super(new TestDevice("engine", ImmutableMap.<String, Action>builder()
-                .put("forward", Train::forward)
-                .put("reverse", (p) -> System.out.println("Move backward at " + p[0] + "%"))
-                .put("stop", (p) -> System.out.println("Stop"))
-                .build()),
-              new TestDevice("detector", Collections.emptyMap())
+        super(new Engine("engine"),
+                new Detector("front-detector"),
+                new Detector("rear-detector")
         );
+        onEvent("topology", this::topology);
+        onEvent("destination", this::destination);
+        onEvent("switch-changed", this::switchChanged);
     }
 
-    private static void forward(String... parameters) {
-        System.out.println("Move forward at " + parameters[0] + "%");
+    private Void topology(Event event) {
+        //TODO
+        return null;
+    }
+
+    private Void destination(Event event) {
+        //TODO
+        return null;
+    }
+
+    private Void switchChanged(Event event) {
+        //TODO
+        return null;
     }
 }
