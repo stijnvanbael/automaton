@@ -9,7 +9,11 @@ public interface Robot {
 
     Device device(String name);
 
-    void eventReceived(Event event);
+    Robot eventReceived(Event event);
 
-    void onEvent(String name, Function<Event, Void> handler);
+    Robot onEvent(String name, Function<Event, Void> handler);
+
+    Robot variable(String name, Object value);
+
+    Object variable(String name);
 }

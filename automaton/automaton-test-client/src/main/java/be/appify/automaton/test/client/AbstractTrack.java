@@ -30,7 +30,8 @@ public class AbstractTrack implements Segment {
         return nextSegments.get(direction);
     }
 
-    public AbstractTrack attach(Segment next, Direction direction) {
+    @Override
+    public Segment attach(Segment next, Direction direction) {
         this.nextSegments.put(direction, next);
         return this;
     }
